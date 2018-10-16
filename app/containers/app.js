@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React, {Component} from 'react';
 import {hot} from 'react-hot-loader';
 import {BrowserRouter} from 'react-router-dom';
+import {ProductCatalog} from './productcatalog';
 
 class App extends Component {
     render() {
@@ -12,7 +13,7 @@ class App extends Component {
                     <div className="app-container">
                         <AppBar title="Walmart Code Challenge" />
                         <div className="grid-container">
-                            <h2>Code Challenge</h2>
+                            <ProductCatalog />
                         </div>
                     </div>
                 </BrowserRouter>
