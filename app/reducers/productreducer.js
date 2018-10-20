@@ -7,12 +7,12 @@ export const productReducer = (state = {
 
 }, action) => {
     switch (action.type) {
-        case EventConstants.ActionTypes.PRODUCT_LOAD_SUCCESS:
+        case EventConstants.ActionTypes.PRODUCTS_LOAD_SUCCESS:
             return {
                 data: action.data,
                 loading: false
             };
-        case EventConstants.ActionTypes.PRODUCT_LOAD_REQUEST:
+        case EventConstants.ActionTypes.PRODUCTS_LOAD_REQUEST:
             return {
                 data: null,
                 loading: true

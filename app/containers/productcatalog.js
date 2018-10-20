@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {ProductActions} from '../actions/productactions';
+import ProductCard from '../components/productcard';
 
 
 
@@ -23,8 +24,21 @@ export class ProductCatalog extends Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(ProductActions.fetch());
+        this.props.dispatch(ProductActions.fetchAll());
     }
+
+    renderProducts(data) {
+        return data.map(product => {
+                return (
+                    <div className="product-card">
+                        <div className="card-box">
+                            <ProductCard {...product} />
+                        </div>
+                    </div>
+                );
+            });
+    }
+
 
     render() {
         console.log('render', this);
@@ -32,16 +46,12 @@ export class ProductCatalog extends Component {
         return (
             <Row>
                 <Col sm={12}>
-                    
-                    {data &&
-                   <div className="product-card">
-                       <div className="card-box">
-                           <img src={data.mediumImage} />
-                       </div>
-                   </div>}
+                    <div className="grid-container">
+                    {data && this.renderProducts(data)}
                     {loading &&
                         <CircularProgress className="progress" size={50} />
                     }
+                    </div>
                 </Col>
             </Row>
         );

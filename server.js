@@ -84,7 +84,7 @@ app.get('/api/products/?', function(req, res) {
             if (err) {
                 console.log(err);
                 return res.status(500).json({
-                    error: 'Could not retrieve configurations'
+                    error: 'Internal error occurred while retrieving the products!'
                 });
             }
             res.json(products);

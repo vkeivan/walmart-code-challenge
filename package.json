@@ -8,8 +8,8 @@
     "start:dev": "node server.js --mode development --config webpack.config.js --open --hot --history-api-fallback"
   },
   "dependencies": {
-    "@material-ui/core": "^1.2.0",
-    "@material-ui/icons": "^1.1.0",
+    "@material-ui/core": "^3.2.2",
+    "@material-ui/icons": "^3.0.1",
     "body-parser": "^1.18.3",
     "classnames": "^2.2.5",
     "cookie-parser": "~1.4.3",
@@ -38,7 +38,8 @@
     "react-router-redux": "^4.0.8",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
