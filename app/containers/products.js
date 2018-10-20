@@ -10,11 +10,11 @@ import {ProductActions} from '../actions/productactions';
 
 
 @connect(state => ({
-    product: state.product
+    products: state.products
 }))
-export class ProductCatalog extends Component {
+export class Products extends Component {
     static propTypes = {
-        product: PropTypes.object,
+        products: PropTypes.obsject,
         dispatch: PropTypes.func
     };
 
@@ -32,15 +32,15 @@ export class ProductCatalog extends Component {
         return (
             <Row>
                 <Col sm={12}>
-                    
+
                     {data &&
-                   <div className="product-card">
-                       <div className="card-box">
-                           <img src={data.mediumImage} />
-                       </div>
-                   </div>}
+                    <div className="product-card">
+                        <div className="card-box">
+                            <img src={data.mediumImage} />
+                        </div>
+                    </div>}
                     {loading &&
-                        <CircularProgress className="progress" size={50} />
+                    <CircularProgress className="progress" size={50} />
                     }
                 </Col>
             </Row>

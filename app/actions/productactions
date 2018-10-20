@@ -8,6 +8,9 @@ const FETCH_PRODUCT_URL = 'http://api.walmartlabs.com/v1/items/14225185?format=j
 export class ProductActions {
     static fetch() {
         return (dispatch) => {
+            dispatch({
+                type: EventConstants.ActionTypes.PRODUCT_LOAD_REQUEST
+            });
             return fetchJsonp(FETCH_PRODUCT_URL)
                 .then((response) => {
                     return response.json();
