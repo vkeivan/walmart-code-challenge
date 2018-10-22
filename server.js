@@ -29,11 +29,6 @@ var ProductSchema = mongoose.Schema({
 });
 
 ProductSchema.plugin(timestamps);
-ProductSchema.plugin(textSearch);
-
-
-// ProductSchema.index({name: 'text', 'categoryPath': 'text'});
-// ProductSchema.index({keywords: 'text'});
 var Product = mongoose.model('Product', ProductSchema);
 
 
