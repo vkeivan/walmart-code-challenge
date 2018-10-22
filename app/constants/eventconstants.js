@@ -9,5 +9,7 @@ export const EventConstants = {
         PRODUCTS_LOAD_REQUEST: null,
         PRODUCTS_LOAD_ERROR: null,
         PRODUCTS_SEARCH_REQUEST: null,
+        PRODUCTS_SEARCH_SUCCESS: null,
+        PRODUCTS_SEARCH_CLEAR: null,
     })
 };

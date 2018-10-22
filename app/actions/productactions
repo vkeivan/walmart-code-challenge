@@ -15,7 +15,6 @@ export class ProductActions {
                 .then((response) => {
                     return response.json();
                 }).then((json) => {
-                    console.log('json:', json);
                     dispatch({
                         type: EventConstants.ActionTypes.PRODUCT_LOAD_SUCCESS,
                         data: json
@@ -35,7 +34,6 @@ export class ProductActions {
                 .then((response) => {
                     return response.json();
                 }).then((json) => {
-                    console.log('json:', json);
                     dispatch({
                         type: EventConstants.ActionTypes.PRODUCTS_LOAD_SUCCESS,
                         data: json
@@ -48,11 +46,22 @@ export class ProductActions {
 
     static searchByKeyword(query) {
         return (dispatch) => {
-            return fetch('/api/products/search')
+            dispatch({
+                type: EventConstants.ActionTypes.PRODUCTS_SEARCH_REQUEST,
+                query
+            });
+
+            return fetch(`/api/search/${query}`)
                 .then((response) => {
                     return response.json();
-                }).then((json) => {
+                })
+                .then((data) => {
 
+                    dispatch({
+                        type: EventConstants.ActionTypes.PRODUCTS_SEARCH_SUCCESS,
+                        data,
+                        query
+                    });
                 });
         }
     }

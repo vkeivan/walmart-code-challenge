@@ -27,12 +27,10 @@ export class Products extends Component {
     }
 
     render() {
-        console.log('render', this);
         const {data, loading} = this.props.product;
         return (
             <Row>
                 <Col sm={12}>
-
                     {data &&
                     <div className="product-card">
                         <div className="card-box">

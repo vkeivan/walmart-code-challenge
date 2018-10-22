@@ -43,7 +43,7 @@ const ProductCard = props => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="xsmall" color="primary" onClick={() => window.location = props.productUrl}>
+                <Button bsSize="xsmall" color="primary" onClick={() => window.location = props.productUrl}>
                     Detail
                 </Button>
             </CardActions>

@@ -24,10 +24,16 @@ var ProductSchema = mongoose.Schema({
     shortDescription: String,
     longDescription: String,
     thumbnailImage: String,
-    color: String
+    color: String,
+    keywords: [String]
 });
 
 ProductSchema.plugin(timestamps);
+ProductSchema.plugin(textSearch);
+
+
+// ProductSchema.index({name: 'text', 'categoryPath': 'text'});
+// ProductSchema.index({keywords: 'text'});
 var Product = mongoose.model('Product', ProductSchema);
 
 
@@ -91,6 +97,38 @@ app.get('/api/products/?', function(req, res) {
         });
 });
 /*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+app.get('/api/search/:keyword', function(req, res) {
+    console.log(req.params.keyword);
+    Product
+        .find({})
+        .where({ categoryPath: new RegExp(req.params.keyword, 'i') })
+
+
+        // .textSearch(req.params.keyword, (err, output) => {
+        //     console.log(err, output);
+        // });
+        // .sort({
+        //     createdAt: -1
+        // })
+        .exec(function(err, products) {
+            console.log('products', products);
+            if (err) {
+                console.log(err);
+                return res.status(500).json({
+                    error: 'Internal error occurred while retrieving the products!'
+                });
+            }
+            res.json(products);
+        });;
+
+});
+
+
+
+
+
+
 app.post('/product', function(req, res, next) {
     // var body = req.body;
     // console.log(body);
