@@ -26,6 +26,21 @@ module.exports = {
 
             },
             {
+                test: /\.(eot|otf|ttf|woff2?)(\?[a-z0-9=&.]+)?$/,
+                use: {
+                    loader: 'file-loader'
+                }
+            },
+            {
+                test: /\.css$/,
+                use: extractSass.extract({
+                    use: [{
+                        loader: "css-loader"
+                    }],
+                    fallback: "style-loader"
+                })
+            },
+            {
                 test: /\.sass$/,
                 use: extractSass.extract({
                     use: [{

@@ -32,21 +32,19 @@ const ProductCard = props => {
                     title="Contemplative Reptile"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h4" className="product-title">
                         {name}
                     </Typography>
-                    { /*
                     <Typography component="p">
-                        {shortDescription}
-                    </Typography> */ }
+
+                        <img src={props.customerRatingImage} />
+                        <span>&nbsp;({props.numReviews})</span>
+                    </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
-                    Share
-                </Button>
-                <Button size="small" color="primary">
-                    Learn More
+                <Button size="xsmall" color="primary" onClick={() => window.location = props.productUrl}>
+                    Detail
                 </Button>
             </CardActions>
         </Card>
@@ -63,6 +61,10 @@ ProductCard.propTypes = {
     thumbnailImage: PropTypes.string,
     largeImage: PropTypes.string,
     mediumImage: PropTypes.string,
+    numReviews: PropTypes.number,
+    customerRatingImage: PropTypes.string,
+    productUrl: PropTypes.string,
+    productTrackingUrl: PropTypes.string,
 };
 
 export default withStyles(styles)(ProductCard);

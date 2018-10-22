@@ -12,7 +12,7 @@ class App extends Component {
                 <BrowserRouter>
                     <div className="app-container">
                         <AppBar title="Walmart Code Challenge" />
-                        <div className="grid-container">
+                        <div className="page-container">
                             <ProductCatalog />
                         </div>
                     </div>

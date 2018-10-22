@@ -45,4 +45,15 @@ export class ProductActions {
                 });
         };
     }
+
+    static searchByKeyword(query) {
+        return (dispatch) => {
+            return fetch('/api/products/search')
+                .then((response) => {
+                    return response.json();
+                }).then((json) => {
+
+                });
+        }
+    }
 }
