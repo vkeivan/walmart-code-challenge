@@ -2,27 +2,47 @@
 Full Stack Code Challenge
 
 
-How to install MONGODB?
+<h3>How to install MONGODB?</h3>
 If you are using Mac please following these steps:
-1. In system shell run this command:
-  brew update
-2. Install MongoDB binaries by following command:
+
+<ul>
+  <li>
+    1. In system shell run this command:
+    brew update
+  </li>  
+   <li>
+  2. Install MongoDB binaries by following command:
   brew install mongodb
+  </li> 
+</ul>  
 
-3. If your system path includes the location of mongod binary then run this command:
+<h3>How to setup MONGODB?</h3>
+<ul>
+  <li>
+   1. If your system path includes the location of mongod binary then run this command:
   mongod
-4. Install MongoDB Compass Community Version:
-5. After MongoDB Compass installation try to connect to your local MongoDB by selecting connect from top main menu.
-6. After successful connection then a db called walmart
-7. Use walmart db and create a collection node called products
-8. Import the code challenge data by uploading the 'mongodb-import-collection.json' from ./app/data directory.
+  </li>  
+   <li>
+ 2. Install MongoDB Compass Community Version
+  </li> 
+     <li>
+ 3. After MongoDB Compass installation try to connect to your local MongoDB by selecting connect from top main menu.
+  </li>
+  <li>
+4. After successful connection then create a db called walmart
+  </li>
+    <li>
+5. Use walmart db and create a collection node called products
+  </li>
+  <li>
+    6. Import the code challenge data by uploading the 'mongodb-import-collection.json' from ./app/data directory
+ </li   
+</ul> 
 
-How to run the NodeJS app?
-npm install
-npm run start:dev
 
-
+<h3>How to setup the NodeJS app?</h3>
+<p>npm install</p>
 
 In order to run the dev server please run this command:
- npm run start:dev
+ <p>npm run start:dev</p>
 
