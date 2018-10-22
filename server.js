@@ -119,11 +119,6 @@ app.get('/api/search/:keyword', function(req, res) {
 
 });
 
-
-
-
-
-
 app.post('/product', function(req, res, next) {
     // var body = req.body;
     // console.log(body);
